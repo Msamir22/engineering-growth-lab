@@ -1,0 +1,41 @@
+[project]
+name = "ai-transaction-gateway"
+version = "0.1.0"
+description = "Hands-on FastAPI and AI engineering system-design lab"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+  "fastapi",
+  "httpx",
+  "pydantic-settings",
+  "uvicorn[standard]",
+]
+
+[dependency-groups]
+dev = [
+  "locust",
+  "mypy",
+  "pytest",
+  "pytest-asyncio",
+  "ruff",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+packages = ["ai_transaction_gateway"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_transaction_gateway"]

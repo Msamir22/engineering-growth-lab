@@ -1,0 +1,2 @@
+{"id":"en-expense-001","input":"I spent 450 EGP at Carrefour today","expected":{"transactions":[{"amount":450,"currency":"EGP","type":"expense","merchant":"Carrefour"}]},"notes":"Starter synthetic case; complete date rules Day 11."}
+{"id":"non-financial-001","input":"The weather is nice today","expected":{"transactions":[]},"notes":"Must not invent a transaction."}
